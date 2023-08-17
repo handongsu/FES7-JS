@@ -20,6 +20,16 @@
             !num.includes(number) && num.push(number)
         }
         console.log(num);
+
+        function lottoGenerator() {
+            const lottoSet = new Set();
+            while (lottoSet.size < 6) {
+                const result = parseInt(Math.random() * 45 + 1);
+
+                lottoSet.add(result);
+            }
+            return lottoSet;
+        }
     </script>
 </body>
 
