@@ -4,17 +4,11 @@ const dongsu = {
   	사는곳: "인천",
 }
 
-
-
-//점표기법, 대괄호 표기법
+//대괄호 표기법
 
 for(let i in dongsu){
     console.log(dongsu[i])
 }
-
-
-
-
 
 
 for(let i in dongsu){
