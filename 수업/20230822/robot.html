@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        function RobotFactory(foodNames) {
+            //Math.random() 배열의 인덱스
+            // index = Math.floor(Math.random() * foodNames.length);
+            // this.foodNames = foodNames[index];
+            this.menu = foodNames;
+            this.sayMenu = function () {
+                const index = parseInt(Math.random() * this.menu.length)
+                console.log(`삘비리비리 오늘의 메뉴는 ${foodNames[index]}`)
+            }
+        }
+
+        const robot = new RobotFactory(['청국장', '물냉면', '돔배고기']);
+
+    </script>
+</body>
+
+</html>

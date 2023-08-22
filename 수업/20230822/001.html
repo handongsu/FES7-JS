@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p></p>
+    <input type="text">
+    <button>Write Something!</button>
+    <div class="divs"></div>
+
+    <script>
+        const myBtn = document.querySelector("button");
+        const myP = document.querySelector("p");
+        const myInput = document.querySelector("input");
+        const myDiv = document.querySelector('.divs');
+
+        myInput.addEventListener('input', () => {
+            myP.textContent = myInput.value;
+        });
+
+        myBtn.addEventListener('click', () => {
+            if (myP.textContent !== "") {
+                const codeBox = document.createElement('div');
+                codeBox.className = "divs";
+                const codeElement = document.createElement('p');
+                codeElement.textContent = myInput.value;
+                codeBox.appendChild(codeElement);
+                myDiv.appendChild(codeBox);
+            } else alert('방명록을 적으세요');
+        });
+
+    </script>
+</body>
+
+</html>
