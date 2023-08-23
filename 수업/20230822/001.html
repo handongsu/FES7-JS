@@ -9,31 +9,47 @@
 </head>
 
 <body>
-    <p></p>
+    <!-- <p></p> -->
     <input type="text">
-    <button>Write Something!</button>
-    <div class="divs"></div>
+    <button class="writeBtn">Write Something!</button>
+    <div></div>
 
     <script>
-        const myBtn = document.querySelector("button");
-        const myP = document.querySelector("p");
+        const myBtn = document.querySelector(".writeBtn");
+        // const myP = document.querySelector("p");
         const myInput = document.querySelector("input");
-        const myDiv = document.querySelector('.divs');
+        const myDiv = document.querySelector('div');
 
-        myInput.addEventListener('input', () => {
-            myP.textContent = myInput.value;
-        });
+        // myInput.addEventListener('input', () => {
+        //     myP.textContent = myInput.value;
+        // });
 
         myBtn.addEventListener('click', () => {
-            if (myP.textContent !== "") {
-                const codeBox = document.createElement('div');
-                codeBox.className = "divs";
-                const codeElement = document.createElement('p');
-                codeElement.textContent = myInput.value;
-                codeBox.appendChild(codeElement);
-                myDiv.appendChild(codeBox);
+            if (myInput.value !== "") {
+                const divBox = document.createElement('div');
+                const element = document.createTextNode(myInput.value);
+                const deleteBtn = document.createElement('button');
+
+                deleteBtn.classList.add('delete');
+                const btnElement = document.createTextNode('삭제');
+
+                deleteBtn.appendChild(btnElement);
+                divBox.appendChild(deleteBtn);
+                divBox.appendChild(element);
+                myDiv.appendChild(divBox);
+
+                deleteBtn.addEventListener('click', () => {
+                    divBox.remove();
+                });
+
             } else alert('방명록을 적으세요');
         });
+
+        //버튼을 클릭 -> input안에 값이 있으면
+        //  div박스 생성 -> input안의 텍스트 생성
+        //  생성된 div박스 안에 텍스트값을 자식으로 위치
+        //  생성된 div박스를 원래 있던 div박스 자식으로 위치
+        //  버튼 생성, class생성, 삭제글씨 생성
 
     </script>
 </body>
