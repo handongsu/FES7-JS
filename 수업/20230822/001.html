@@ -28,14 +28,14 @@
             if (myInput.value !== "") {
                 const divBox = document.createElement('div');
                 const element = document.createTextNode(myInput.value);
-                const deleteBtn = document.createElement('button');
 
+                const deleteBtn = document.createElement('button');
                 deleteBtn.classList.add('delete');
                 const btnElement = document.createTextNode('삭제');
 
+                divBox.appendChild(element);
                 deleteBtn.appendChild(btnElement);
                 divBox.appendChild(deleteBtn);
-                divBox.appendChild(element);
                 myDiv.appendChild(divBox);
 
                 deleteBtn.addEventListener('click', () => {
@@ -43,6 +43,7 @@
                 });
 
             } else alert('방명록을 적으세요');
+            myInput.value = '';
         });
 
         //버튼을 클릭 -> input안에 값이 있으면
