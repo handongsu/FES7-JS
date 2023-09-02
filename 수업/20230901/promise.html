@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const orderCoffee = new Promise((resolve, reject) => {
+            const requestObj = new XMLHttpRequest();
+            requestObj.open('GET', 'orderCoffe.txt');   //open메서드 호출 HTTP GET요청
+            requestObj.onreadystatechange = () => { //onreadystatechange - 요청 상태 변경을 감지
+                if (requestObj.readyState === 4) {
+                    if (requestObj.status === 200) {
+                        const result = requestObj.responseText;
+                        resolve(result);    //얘가 실행되야 then이 실행(통신 성공)
+                    } else {
+                        reject(new Error(`오늘의 커피 원두가 다 떨어졌습니다. ${requestObj.status}`));
+                    }
+                }
+            };
+            requestObj.send();  //orderCoffee.txt 로 HTTP 요청을 시작합니다.
+            //'orderCoffee' Promise의 전체 설정이 캡슐화됩니다.
+        });
+        orderCoffee.then((asyncResult) => {
+            console.log(asyncResult);
+        }).catch((error) => {
+            console.log(error)
+        });
+    </script>
+</body>
+
+</html>
