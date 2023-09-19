@@ -1,0 +1,151 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--gradient2, radial-gradient(293.21% 130.49% at 3.59% 5.28%, #F0F4FF 0%, #A5B6EE 100%));
+    height: 100vh;
+}
+
+.title{
+    width: 244px;
+    height: 48px;
+    margin-top: 72px;
+    margin-bottom: 60px;
+}
+
+.timer-main{
+    width: 400px;
+    border-radius: 16px;
+    background: var(--gradient, linear-gradient(144deg, #5572BB 2.13%, #374B7C 102.97%));
+    
+        box-shadow: 20px 20px 60px 10px rgba(55, 75, 124, 0.40);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 48px
+}
+
+.timer-main hr{
+    width: 312px;
+    margin-top: 23px;
+    margin-bottom: 33px;
+    border-color: #3D538A;
+
+}
+
+.subtitle{
+    color: #fff;
+    font-family: 'Pretendard-Bold';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+.time-group{
+    display: flex;
+    gap: 22px;
+}
+
+.time-group div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+}
+
+.time-group div p{
+    color: var(--light, #A5B6EE);
+        text-align: center;
+        font-family: 'Pretendard-Regular';
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: uppercase;
+}
+
+
+.dot{
+    width: 6px;
+    height: 26px;
+    margin-top: 43px;
+}
+
+.button-group{
+    display: flex;
+    margin: 40px auto;
+    gap: 12px;
+}
+
+.button-group button:disabled{
+    width: 112px;
+    height: 48px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    background-color: #324577;
+    color: #617199;
+}
+
+.button-group .start-btn:enabled{
+    width: 112px;
+        height: 48px;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+    background-color: #5180FF;
+}
+
+.button-group .reset-btn:enabled{
+    width: 112px;
+        height: 48px;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+    background-color: #FB7099;
+}
+
+
+.button-group button img{
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+footer{
+    margin-top: 60px;
+}
+
+.footer-name{
+    color: #8596BF;
+        text-align: center;
+    
+        /* Regular_14px */
+        font-family: 'Pretendard-Regular';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+}
+
+.time-group div input{
+    background-image: url(../img/box.png);
+    width: 80px;
+    height: 80px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    color: #FFF;
+        text-align: center;
+        font-family: 'Pretendard-Bold';
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        cursor: pointer;
+        border-radius: 5px;
+}
+
